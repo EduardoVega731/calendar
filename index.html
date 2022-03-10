@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="LoginCtrl">
+        <div class="LoginWait">Please wait...</div>
+        <div class="LoginNo">
+            <button onclick="myFirebase.googleLogin()">Login With Google</button>
+        </div>
+        <div class="LoginYes">
+            <div class="Username"></div>
+            <button onclick="myFirebase.googleLogout()">Logout</button>
+        </div>
+    </div>
+     
+    
+    <div class="LoginWait">
+        <h2>Please wait...</h2>
+    </div>
+    <div class="LoginNo">
+        <h2>Please log in...</h2>
+    </div>
+    <div class="LoginYes">
+        <!-- contents below-->
+        <div class="container">
+            <h1>Month</h1>
+            <table id="table">
+                <tr>
+                    <th>Sunday</th>
+                    <th></th>
+                    <th>Monday</th>
+                    <th></th>
+                    <th>Tuesday</th>
+                    <th></th>
+                    <th>Wednesday</th>
+                    <th></th>
+                    <th>Thursday</th>
+                    <th></th>
+                    <th>Friday</th>
+                    <th></th>
+                    <th>Saturday</th>
+                <tr>
+                <tr>
+                    <td>1</td>
+                    <td></td>
+                    <td>2</td>
+                    <td></td>
+                    <td>3</td>
+                    <td></td>
+                    <td>4</td>
+                    <td></td>
+                    <td>5</td>
+                    <td></td>
+                    <td>6</td>
+                    <td></td>
+                    <td>7</td>
+                </tr>
+                <button>Add task</button>
+                <button>Delete task</button>
+            </Table>
+        </div>
+    </div>
+
+    <!-- The core firebase JS SDK is always required and must be loaded first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <!-- for DB -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB8WI85KW_rODCfiiNu2fgnQDWY6Q3wKdA",
+            authDomain: "calendar-cs335.firebaseapp.com",
+            projectId: "calendar-cs335",
+            storageBucket: "calendar-cs335.appspot.com",
+            messagingSenderId: "981940042677",
+            appId: "1:981940042677:web:a468de3cdf42ca39f1f7fc"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+
+    <script src="myFirebase.js"></script>
+    <!-- for DB -->
+    <!-- <script src="myFirebaseDB.js"></script> -->
+
+</body>
+
+</html>
