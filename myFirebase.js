@@ -12,6 +12,23 @@ class MyFirebase {
         });
     }
 
+    githubLogin() {
+        var provider = new firebase.auth.GithubAuthProvider();
+
+        provider.setCustomParameters({
+            prompt: 'select_account' // this makes it re-ask which user
+        });
+
+        firebase
+            .auth().signInWithPopup(provider)
+            .then((result) => {
+                this.TheUser = result.additionalUserInfo.username
+                console.log("Logged into Github as: ", this.TheUser);
+            }).catch((error) => {
+                console.log("An error occured loggin in: ", error);
+            });
+    }
+
     googleLogin() {
         const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -29,9 +46,9 @@ class MyFirebase {
             })
     }
 
-    googleLogout() {
+    logout() {
         firebase.auth().signOut().then(() => {
-            console.log("Logged out!");
+            console.log("Logged out.");
         }).catch((error) => {
             console.log("An error occured logging out: ", error);
         })
